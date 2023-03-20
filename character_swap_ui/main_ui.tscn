@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://character_swap_ui/health_bars.tscn" type="PackedScene" id=1]
+[ext_resource path="res://character_swap_ui/characterswap_ui_theme.tres" type="Theme" id=2]
+
+[node name="MainUi" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": "Game's Main user interface Control node. For anchoring to Window Size. Adjust the Rect > Size values to match Project window size."
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_top = 10.0
+margin_right = 83.0
+margin_bottom = 24.0
+text = "Swap Characters"
+
+[node name="ColorRect" type="ColorRect" parent="Label"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="HealthBars" parent="." instance=ExtResource( 1 )]
+margin_top = 10.0
+margin_bottom = -590.0
+
+[node name="Label2" type="RichTextLabel" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -80.0
+margin_right = 206.0
+bbcode_enabled = true
+bbcode_text = "[center][u]Controls[/u][/center]
+Move : ←↑↓→
+Swap : Space/Return/Enter
+Reset : ESC"
+text = "Controls
+Move : ←↑↓→
+Swap : Space/Return/Enter
+Reset : ESC"
+fit_content_height = true
+scroll_active = false
+
+[node name="ColorRect" type="ColorRect" parent="Label2"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )

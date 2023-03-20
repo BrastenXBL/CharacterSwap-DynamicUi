@@ -1,0 +1,51 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "WallBody2D",
+"language": "GDScript",
+"path": "res://walls/wall_body_2D.gd"
+} ]
+_global_script_class_icons={
+"WallBody2D": ""
+}
+
+[application]
+
+config/name="Character Swap"
+run/main_scene="res://main_scene.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[layer_names]
+
+2d_physics/layer_1="Black"
+2d_physics/layer_2="Blue"
+2d_physics/layer_3="Red"
+2d_physics/layer_4="White"
+2d_physics/layer_5="Player"
+2d_physics/layer_6="Goal"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
