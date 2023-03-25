@@ -10,7 +10,7 @@ enum WallTypes {NONE, BLUE, RED, WHITE}
 
 #export vars, Inspector
 export var speed = 300.0
-export var bounce_back_multiplier = 20
+export var bounce_back_multiplier = 0.5
 export(WallTypes) var wall_type = WallTypes.NONE
 
 #public vars
@@ -45,7 +45,7 @@ func _physics_process(delta):
 	else:
 		# Bounce back movement. No Player control.
 		_input_timer += delta
-		move_and_slide(_bounce * delta * bounce_back_multiplier * -1.0)
+		move_and_slide(_bounce * bounce_back_multiplier * -1.0)
 		# Reset Bounce vars after Time.
 		if _input_timer > 0.1:
 			_allow_input = true
